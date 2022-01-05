@@ -99,38 +99,29 @@ Madur 	62 		13239
 
 Efsta línan eru dálkanöfnum, í R er vísað í þau sem “header”, sjá síðar. Til að lesa þessa skrá inn í R þarf að vista hana á csv-formati, sem er einfalt textaskjal sem má skoða í hvaða ritli sem er t.d. notepad. Veljið save file og csv format, hægt er að velja aðgreiningu milli dálka sem bil, kommu eða semikommu. Vistið skrána í möppunni Rkynning sem spendyr.csv, annars þurfið þið að gefa slóðina til að lesa inn skrána í R-inu.
 ```{r dálkar}
-#spendyr=read.csv("spendyr.csv",sep=";", dec=”,”) 
+spendyr=read.csv("spend.csv",sep=" ") 
 #ath hjálp fyrir read.csv
-#fallið gerir ráð fyrir header, sep=",", dec=".", þessu þarf     # kannski að breyta,  einnig væri hægt að nota                    # "Import Dataset"" takkann
-#head(spendyr)
-##         tegund   likami heili                                ## 1      Refur        3.385  44.5
-## 2      Uglu-api     0.480  15.5
-## 3      Bifur        1.350   8.1
-## 4      Kyr        465.000 423.0
-## 5      Ulfur       36.330 119.5
-## 6      Geit         27.660 115.0
-#names(spendyr) # ég var með fleiri gögn
-## [1] "tegund" "likami"    "heili"
-#plot(spendyr$likami,spendyr$heili) 
+
+names(spendyr)
+
+plot(spendyr$líkami.kg,spendyr$heili.g) 
 
 # betra væri að umbreyta gögnunum t.d. með logarithma (log)
-#plot(log(spendyr$likami),log(spendyr$heili)) 
+plot(log(spendyr$líkami.kg),log(spendyr$heili.g),xlim=c(-1,7),ylim=c(1,10)) 
+
 # finnum bestu beinu línu, notum fallið lm
-#heili.lm=lm(log(heili)~log(likami),data=spendyr)
-#heili.lm # hér má finna skurðpunkt (a) og hallatölu línunnar (b)
-## 
-## Call:
-## lm(formula = log(heili) ~ log(likami), data = spendyr)
-## 
-## Coefficients:
-## (Intercept)    log(body)  
-##      2.1348       0.7517
-#abline(heili.lm) # teiknum línuna y = a + bx
+heili.lm=lm(log(heili.g)~log(líkami.kg),data=spendyr)
+
+heili.lm # hér má finna skurðpunkt (a) og hallatölu línunnar (b)
+
+abline(heili.lm) # teiknum línuna y = a + bx
 
 #hvaða tegundir sýna mest frávik frá línunni?
-#notið identify(spendyr$likami,log(spendyr$heili),spendyr$tegund)
+#notið identify(log(spendyr$líkami.kg),log(spendyr$heili.g),spendyr$Tegund)
 # klikkið á punktana og síðan á "Finish" takkann í horninu til   # hægri fyrir ofan myndina
-# Hér mætti breyta textanum á ásunum með xlab og ylab
+# 
+#Eða þá notið:
+text((log(spendyr$heili.g)+0.5)~log(spendyr$líkami.kg), labels=spendyr$Tegund,data=spendyr, cex=0.9, font=2)
 ```
 
 ### Erfðafræði
