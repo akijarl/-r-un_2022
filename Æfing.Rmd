@@ -25,11 +25,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r inngangur}
 # R les ekki texta á eftir #
 2+2 # ýtið á enter
-## [1] 4
+
 2*2
-## [1] 4
+
 2^2
-## [1] 4
+
 ```
 
 ### Föll
@@ -37,15 +37,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r reiking}
 a = c(2,4,2,3) # c-fallið bindur saman tölurnar 2,4, 2 og 3 í vektor
 a # enter
-## [1] 2 4 2 3
+
 mean(a) #gefur meðatal af gildum í a
-## [1] 2.75
+
 help(mean) # hjálparsíða fylgir öllum skipunum
 # velja má ákveðin gildi með því að setja ákv. skilyrði innan []:
-a[1] # fyrsta gildið í a
-## [1] 2
+a[1] # fyrsta gildið í "a"
+
 a[1:3] # hvað gerir 1:3? Prófið
-## [1] 2 4 2
+
 1:3 #enter
 ## [1] 1 2 3
 # hægt er að framkvæma reikninga á vektorum t.d.
