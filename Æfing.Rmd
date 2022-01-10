@@ -1,7 +1,7 @@
 ---
 title: "Þróun"
-author: "SP & ÁJL"
-date: "1/6/2022"
+author: "Snæbjörn Pállsson & Áki Jarl Láruson"
+date: "`r format(Sys.time(), '%d %B, %Y')`" 
 output: word_document
 ---
 
@@ -15,10 +15,15 @@ knitr::opts_chunk$set(echo = TRUE)
   R-ið er forrit sem hægt er að nota við tölfræðigreiningar, reikninga, til að teikna myndir, skrifa forrit og einnig við skýrslugerð. Forritið er ókeypis og hægt er að hlaða því niður frá: http://www.r-project.org, þar sem má einnig finna ýmsar gagnlegar upplýsingar um notkun Rsins. Veljið CRAN og “base” útgáfu fyrir það stýrikerfi sem þið eruð með á tölvunni. 
   
   Í “base” eru grunnskipanir til að keyra R-ið. Auk “base” eru til fjöldi pakka með mismunandi skipunum fyrir sérhæfðari vinnu sem hægt er að bæta við síðar en þið þurfið ekki núna t.d. til að greina gögn um samfélög lífvera eða þróunartré. Til að keyra R-ið er hægt að nota mismunandi forrit en hér er mælt með R-studio http://www.rstudio.com. Ókeypis útgáfan dugar vel.
-Þegar þið eruð búin að setja upp bæði R-ið og R-studio þá getið þið klikkað á Rstudio-íkoninn og þá opnast þrír eða fjórir gluggar:            
+  
+  Þegar þið eruð búin að setja upp bæði R-ið og R-studio þá getið þið klikkað á Rstudio-íkoninn og þá opnast þrír eða fjórir gluggar: 
+  
 1. Ef þið klikkið á íkoninn efst í horninu til hægri (grænn depill með hvítum krossi) þá getið þið valið R-script sem má nota til að skrifa skipanir. Þær skipanir má senda í “Console” gluggann fyrir neðan með því að ýta á Run.
+
 2. Í “Console” glugganum neðst til vinstri er einnig hægt að framkvæma skipanir á eftir “>” t.d. reikninga. Þar er einnig hægt að hlaða inn gögnum í R-ið eða búa þau til (sjá dæmi síðar). Þetta er vinnusvæðið (e. workspace) og það má vista það undir ólíkum nöfnum og geyma í mismunandi möppum eða sem verkefni (File -> New project sjá síðar) líkt og word-skjöl sem þið getið haldið að vinna áfram með síðar. Þá getið þið farið inn í möppuna og klikkað á R-íkoninn til að opna Rstudio sem þið voruð að vinna með síðast.
+
 3. Efri glugginn til hægri sýnir hvaða gögn eru til staðar í því vinnusvæði sem er opið (environment), hvaða skipanir hafa verið gefnar (History) og þar er flipi til að lesa inn gögn (líka hægt að nota R-skipun t.d. read.csv).
+
 4. Neðri glugginn til hægri er með flipa þar sem finna má yfirlit yfir skrár í sömu möppu og þið eruð að vinna í, myndir sem þið hafið teiknað í R-inu, pakka sem hægt er að ná í á heimasíðu R-sins, hjálp fyrir R-föll (functions), og gögn sem fylgja base eða þeim pökkum sem þið hafið tengt við vinnusvæðið.
 
 ### R sem reiknivél:
@@ -35,7 +40,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Föll
 Ýmis föll eru skilgreind í R og eru þau notuð með því að nota () á eftir nafni fallsins. Inn í svigann er hægt að setja gögn og ákveðnar upplýsingar (argument) sem hefur hefur áhrif á hvað fallið gerir.
 ```{r reiking}
-a = c(2,4,2,3) # c-fallið bindur saman tölurnar 2,4, 2 og 3 í vektor
+a = c(2,4,2,3) # c-fallið bindur saman tölurnar 2, 4, 2, og 3 í vektor
 a # enter
 
 mean(a) #gefur meðatal af gildum í a
